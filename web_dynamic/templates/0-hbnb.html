@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
-    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
-    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
-    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
-    <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
-    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
-    <title>HBnB</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo"></div>
-    </header>
-    <div class="container">
+  	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
+		<link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
+		<link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
+		<link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
+		<link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{ cache_id }}">
+		<link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
+		<title>HBnB</title>
+  	</head>
+  	<body>
+    	<header>
+      		<div class="logo"></div>
+    	</header>
+    	<div class="container">
 
 
 	<!--****************************
@@ -23,7 +23,7 @@
 
 	************************-->
 
-      <section class="filters">
+      	<section class="filters">
 
 
 
@@ -34,22 +34,22 @@
 		************************-->
 	
 	<div class="locations">
-	  <h3>States</h3>
-	  <h4>&nbsp;</h4>
-	  <div class="popover">
-	    <ul>
-	      {% for state in states %}
-	      <li>
-		<h2>{{ state[0].name }}:</h2>
-		<ul>
-		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
-		  {% endfor %}
-		</ul>
-	      </li>
-	      {% endfor %}
-	    </ul>
-	  </div>
+		<h3>States</h3>
+		<h4>&nbsp;</h4>
+		<div class="popover">
+			<ul>
+			{% for state in states %}
+				<li>
+				<h2>{{ state[0].name }}:</h2>
+				<ul>
+				{% for city in state[1] %}
+				<li>{{ city.name }}</li>
+				{% endfor %}
+				</ul>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
 	</div>
 	<!--****************************
 
@@ -58,15 +58,15 @@
 		************************-->
 
 	<div class="amenities">
-	  <h3>Amenities</h3>
-	  <h4>&nbsp;</h4>
-	  <div class="popover">
-	    <ul>
-	      {% for amenity in amenities %}
-	      <li>{{ amenity.name }}</li>
-	      {% endfor %}
-	    </ul>
-	  </div>
+		<h3>Amenities</h3>
+		<h4>&nbsp;</h4>
+		<div class="popover">
+			<ul>
+			{% for amenity in amenities %}
+				<li>{{ amenity.name }}</li>
+			{% endfor %}
+			</ul>
+		</div>
 	</div>
 
 		<!--****************************
@@ -86,8 +86,8 @@
 
 	************************-->
 
-      <div class="placesh1"><h1>Places</h1></div>
-      <section class="places">
+    <div class="placesh1"><h1>Places</h1></div>
+    <section class="places">
 
 	<!--****************************
 
@@ -97,29 +97,29 @@
 	
 	{% for place in places %}
 	<article>
-	  <div class="title_box">
-	    <h2>{{ place.name }}</h2>
-	    <div class="price_by_night">${{ place.price_by_night }}</div>
-	  </div>
-	  <div class="information">
-	    <div class="max_guest">{{ place.max_guest }} Guest{% if place.max_guest != 1 %}s{% endif %}</div>
-            <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
-            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
-	  </div>
+		<div class="title_box">
+			<h2>{{ place.name }}</h2>
+			<div class="price_by_night">${{ place.price_by_night }}</div>
+		</div>
+		<div class="information">
+			<div class="max_guest">{{ place.max_guest }} Guest{% if place.max_guest != 1 %}s{% endif %}</div>
+			<div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
+			<div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
+		</div>
 
 
-	  <!--****************************
+		<!--****************************
 
-				USER
+					USER
 
 		************************-->
 
-	  <div class="user">
-            <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
-          </div>
-          <div class="description">
-	    {{ place.description | safe }}
-          </div>
+		<div class="user">
+				<b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
+		</div>
+			<div class="description">
+			{{ place.description | safe }}
+			</div>
 	</article> <!---End 1 PLACE Article-->
 
 	{% endfor %}
