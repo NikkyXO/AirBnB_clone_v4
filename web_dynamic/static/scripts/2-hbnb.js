@@ -12,8 +12,23 @@ $(document).ready(function () {
 		} else {
 			delete amenities[amenityId];
 			amen_list.splice(amen_list.indexOf(amenityName), 1);
-
 		}
 		$('.amenities h4').text(amen_list);
 	});
+
+	$.ajax({
+		type: "GET",
+		url: "http://0.0.0.0:5001/api/v1/status/",
+		success: function (data) {
+			console.log(data);
+			$("#api-status").addClass("available");
+		},
+		error: function (data, textStatus, errorThrown) {
+			console.log(data);
+			console.log(textStatus);
+			console.log(errorThrown);
+		},
+		dataType: "json",
+	});
 });
+
