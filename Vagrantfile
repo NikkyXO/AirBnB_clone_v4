@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   # NOTE: This will enable public access to the opened port
   # config.vm.network "forwarded_port", guest: 80, host: 8080
   # I expose the port 5001 of my vm to the port 5001 on my computer
-  config.vm.network :forwarded_port, guest: 5001, host: 5001 
+  # config.vm.network :forwarded_port, guest: 5001, host: 5001 
 
 
   # Create a forwarded port mapping which allows access to a specific port
